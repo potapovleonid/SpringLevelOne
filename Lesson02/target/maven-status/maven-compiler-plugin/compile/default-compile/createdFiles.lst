@@ -1,0 +1,3 @@
+pro\bolshakov\geekbrains\lesson2\config\AppConfig.class
+pro\bolshakov\geekbrains\lesson2\controller\IndexController.class
+pro\bolshakov\geekbrains\lesson2\config\WebInitializer.class
