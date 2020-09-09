@@ -48,7 +48,7 @@
                     <url>http://localhost:8080/manager/text</url>
                     <username>geek</username>
                     <password>geek</password>
-                    <path>/app</path>
+                    <path>/apptest</path>
                 </configuration>
             </plugin>
             <plugin>
