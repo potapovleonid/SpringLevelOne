@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4aa8568a-8431-49b2-9370-ce60283117ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lesson02.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson02.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/controllers/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/controllers/WebControllers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/domain/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/repository/ProductImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/service/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/settings/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/settings/WebInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/allProducts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/new_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/controllers/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/controllers/WebControllers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/domain/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/repository/ProductImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/settings/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/des/home/settings/WebInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/controllers/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/controllers/WebControllers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/domain/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/repository/ProductImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/settings/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/settings/WebInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/attoparser-2.0.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-aop-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-beans-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-context-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-core-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-expression-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-jcl-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-web-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/spring-webmvc-5.2.8.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/thymeleaf-3.0.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/thymeleaf-spring5-3.0.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/lib/unbescape-1.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/templates/allProducts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/templates/new_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/templates/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hH8QqWtutTzY9aZHjtjS1lRNnY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4aa8568a-8431-49b2-9370-ce60283117ba" name="Default Changelist" comment="" />
+      <created>1599656643502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599656643502</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="114" key="#Project_Structure" timestamp="1599672778460">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="114" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1599672778460" />
+    <state x="242" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1599748052008">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="242" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1599748052008" />
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom" timestamp="1599750789230">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1599750789230" />
+    <state width="1874" height="295" key="GridCell.Tab.0.center" timestamp="1599750789230">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1599750789230" />
+    <state width="1874" height="295" key="GridCell.Tab.0.left" timestamp="1599750789230">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1599750789230" />
+    <state width="1874" height="295" key="GridCell.Tab.0.right" timestamp="1599750789230">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1599750789230" />
+  </component>
+</project>
