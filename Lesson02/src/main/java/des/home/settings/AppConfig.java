@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("des.home.controllers")
+@ComponentScan("des.home")
 public class AppConfig implements WebMvcConfigurer {
 
     @Override

@@ -1,3 +1,7 @@
+des\home\service\ProductServiceImpl.class
+des\home\controllers\ProductController.class
 des\home\controllers\WebControllers.class
-des\home\settings\WebInitializer.class
+des\home\domain\Product.class
 des\home\settings\AppConfig.class
+des\home\repository\ProductImpl.class
+des\home\settings\WebInitializer.class

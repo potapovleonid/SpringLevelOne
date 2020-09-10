@@ -20,7 +20,7 @@ public class ProductImpl {
         products.put(++id, new Product(id, "Beer", 88.0));
     }
 
-    public Product getById(int id){
+    public Product getById(long id){
         return products.get(id);
     }
 
@@ -28,7 +28,7 @@ public class ProductImpl {
         return new ArrayList<>(products.values());
     }
 
-    public void removeProduct(int id){
+    public void removeProduct(long id){
         products.remove(id);
     }
 

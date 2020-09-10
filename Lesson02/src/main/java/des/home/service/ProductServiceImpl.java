@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl {
@@ -16,7 +17,7 @@ public class ProductServiceImpl {
         this.productImpl = productImpl;
     }
 
-    public Product getById(int id){
+    public Product getById(long id){
         return productImpl.getById(id);
     }
 
@@ -30,7 +31,14 @@ public class ProductServiceImpl {
         return productImpl.save(product);
     }
 
-    public void removeProduct(int id){
+    public void removeProduct(long id){
         productImpl.removeProduct(id);
+    }
+
+    public List<Product> getByPrice(Double start, Double end){
+        return productImpl.getProducts().stream()
+                .filter(product -> product.getPrice() >= start && product.getPrice() <= end)
+                .sorted(Comparator.comparingDouble(Product::getPrice))
+                .collect(Collectors.toList());
     }
 }
