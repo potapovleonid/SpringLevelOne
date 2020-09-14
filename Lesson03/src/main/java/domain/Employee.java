@@ -14,9 +14,9 @@ public class Employee {
     @Column(name = "fullname_fld")
     private String fullname;
 
-//    @OneToOne
-//    @JoinColumn(name = "employee_details_id")
-//    private EmployeeDetails employee_details;
+    @OneToOne
+    @JoinColumn(name = "employee_details_id")
+    private EmployeeDetails employee_details;
 
     public Employee() {
     }
@@ -37,11 +37,11 @@ public class Employee {
         this.fullname = fullname;
     }
 
-//    public EmployeeDetails getEmployee_details() {
-//        return employee_details;
-//    }
+    public EmployeeDetails getEmployee_details() {
+        return employee_details;
+    }
 
-//    public void setEmployee_details(EmployeeDetails employee_details) {
-//        this.employee_details = employee_details;
-//    }
+    public void setEmployee_details(EmployeeDetails employee_details) {
+        this.employee_details = employee_details;
+    }
 }

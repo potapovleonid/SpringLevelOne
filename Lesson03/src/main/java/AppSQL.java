@@ -12,9 +12,12 @@ public class AppSQL {
         EntityManager em = emf.createEntityManager();
 
         Employee employee = new Employee();
+        Employee employee1 = new Employee();
+        employee1.setFullname("Agapov Denis");
         employee.setFullname("Potapov Leonid");
 
         createEmployee(em, employee);
+        createEmployee(em, employee1);
 
     }
 

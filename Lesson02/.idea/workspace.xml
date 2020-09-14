@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4aa8568a-8431-49b2-9370-ce60283117ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/des/home/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/des/home/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/repository/ProductImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/des/home/repository/ProductImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/des/home/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/des/home/settings/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/des/home/settings/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/des/home/settings/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/des/home/settings/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-web-project.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-web-project.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/settings/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-web-project/WEB-INF/classes/des/home/settings/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
