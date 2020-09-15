@@ -28,7 +28,6 @@ public class ProductController {
         return "allProducts";
     }
 
-    //products/* НЕ РАБОТАЕТ! пишет просто product
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getById(Model model, @PathVariable("id") Long id){
         Product product = productService.getById(id);
