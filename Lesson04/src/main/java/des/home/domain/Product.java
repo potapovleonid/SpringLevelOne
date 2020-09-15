@@ -2,13 +2,11 @@ package des.home.domain;
 
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Service
-@Table(name = "Products")
+
+@Entity
+@Table(name = "products_tbl")
 public class Product {
     @Id
     @GeneratedValue
@@ -17,6 +15,9 @@ public class Product {
 
     @Column(name = "title_fld")
     private String title;
+
+    @Column(name = "price_fld")
+    private Double price;
 
     public Product() {
     }
@@ -35,5 +36,18 @@ public class Product {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Product [ id = %d; title = %s; price = %d]", id, title, price);
     }
 }
