@@ -21,6 +21,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories("des.home.repositories")
@@ -46,6 +47,16 @@ public class AppData implements WebMvcConfigurer {
         factoryBean.setDataSource(getDataSource());
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         factoryBean.setPackagesToScan("des.home.domain");
+
+        Properties properties = new Properties();
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        properties.put("hibernate.max_fetch_depth", 3);
+        properties.put("hibernate.jdbc.fetch_size", 50);
+        properties.put("hibernate.jdbc.batch_size", 10);
+        properties.put("hibernate.show_sql", true);
+
+        factoryBean.setJpaProperties(properties);
+
         return factoryBean;
     }
 
