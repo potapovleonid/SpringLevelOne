@@ -26,24 +26,26 @@ import java.util.Properties;
 @Configuration
 @EnableJpaRepositories("des.home.repositories")
 @EnableTransactionManagement
-@EnableWebMvc
-public class AppData implements WebMvcConfigurer {
+@ComponentScan("des.home")
+//@EnableWebMvc
+public class AppData {
     /* JPA */
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/magazine?serverTimezone=UTC");
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("355286888aaAA!!@@##$$%%");
 
         return dataSource;
     }
 
-    @Bean(name = "entiryManagerFactory")
+    @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean getEntityManager() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+
         factoryBean.setDataSource(getDataSource());
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         factoryBean.setPackagesToScan("des.home.domain");
@@ -69,32 +71,32 @@ public class AppData implements WebMvcConfigurer {
 
 
     /* WEB MVC*/
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/resources/**").addResourceLocations("resources");
-    }
-
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setPrefix("/WEB-INF/templates/");
-        resolver.setSuffix(".html");
-        return resolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver resolver) {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(resolver);
-        return templateEngine;
-    }
-
-    @Bean
-    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
-        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setTemplateEngine(templateEngine);
-        viewResolver.setCharacterEncoding("UTF-8");
-        return viewResolver;
-    }
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry
+//                .addResourceHandler("/resources/**").addResourceLocations("resources");
+//    }
+//
+//    @Bean
+//    public SpringResourceTemplateResolver templateResolver() {
+//        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+//        resolver.setPrefix("/WEB-INF/templates/");
+//        resolver.setSuffix(".html");
+//        return resolver;
+//    }
+//
+//    @Bean
+//    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver resolver) {
+//        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+//        templateEngine.setTemplateResolver(resolver);
+//        return templateEngine;
+//    }
+//
+//    @Bean
+//    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
+//        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+//        viewResolver.setTemplateEngine(templateEngine);
+//        viewResolver.setCharacterEncoding("UTF-8");
+//        return viewResolver;
+//    }
 }
