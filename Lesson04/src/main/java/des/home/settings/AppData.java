@@ -34,8 +34,7 @@ import java.util.Properties;
 @EnableJpaRepositories("des.home.repositories")
 @EnableTransactionManagement
 @ComponentScan("des.home")
-@EnableWebMvc
-public class AppData implements WebMvcConfigurer {
+public class AppData{
     /* JPA */
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
@@ -77,34 +76,4 @@ public class AppData implements WebMvcConfigurer {
         return manager;
     }
 
-
-    /* WEB MVC*/
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/resources/**").addResourceLocations("resources");
-    }
-
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setPrefix("/WEB-INF/templates/");
-        resolver.setSuffix(".html");
-        return resolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver resolver) {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(resolver);
-        return templateEngine;
-    }
-
-    @Bean
-    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
-        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setTemplateEngine(templateEngine);
-        viewResolver.setCharacterEncoding("UTF-8");
-        return viewResolver;
-    }
 }

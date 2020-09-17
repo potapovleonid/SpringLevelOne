@@ -49,7 +49,6 @@ public class ProductServiceImpl{
         return productJpaDAORepository.findById(id).orElse(null);
     }
 
-    @Transactional
     @Autowired
     public List<Product> findAll(){
         return productJpaDAORepository.findAll();
