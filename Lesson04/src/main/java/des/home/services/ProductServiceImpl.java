@@ -2,10 +2,13 @@ package des.home.services;
 
 import des.home.domain.Product;
 import des.home.repositories.ProductJpaDAORepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl{
@@ -13,6 +16,17 @@ public class ProductServiceImpl{
 
     public ProductServiceImpl(ProductJpaDAORepository productJpaDAORepository) {
         this.productJpaDAORepository = productJpaDAORepository;
+    }
+
+    public List<Product> getProducts(){
+        return findAll();
+    }
+
+    public List<Product> getByPrice(Integer start, Integer end){
+        return productJpaDAORepository.findAll().stream()
+                .filter(product -> product.getPrice() >= start && product.getPrice() <= end)
+                .sorted(Comparator.comparingInt(Product::getPrice))
+                .collect(Collectors.toList());
     }
 
     @Transactional
@@ -36,6 +50,7 @@ public class ProductServiceImpl{
     }
 
     @Transactional
+    @Autowired
     public List<Product> findAll(){
         return productJpaDAORepository.findAll();
     }

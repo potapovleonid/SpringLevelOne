@@ -10,6 +10,13 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 //import org.springframework.web.servlet.ViewResolver;
 //import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -27,8 +34,8 @@ import java.util.Properties;
 @EnableJpaRepositories("des.home.repositories")
 @EnableTransactionManagement
 @ComponentScan("des.home")
-//@EnableWebMvc
-public class AppData {
+@EnableWebMvc
+public class AppData implements WebMvcConfigurer {
     /* JPA */
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
@@ -72,32 +79,32 @@ public class AppData {
 
 
     /* WEB MVC*/
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry
-//                .addResourceHandler("/resources/**").addResourceLocations("resources");
-//    }
-//
-//    @Bean
-//    public SpringResourceTemplateResolver templateResolver() {
-//        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-//        resolver.setPrefix("/WEB-INF/templates/");
-//        resolver.setSuffix(".html");
-//        return resolver;
-//    }
-//
-//    @Bean
-//    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver resolver) {
-//        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-//        templateEngine.setTemplateResolver(resolver);
-//        return templateEngine;
-//    }
-//
-//    @Bean
-//    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
-//        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-//        viewResolver.setTemplateEngine(templateEngine);
-//        viewResolver.setCharacterEncoding("UTF-8");
-//        return viewResolver;
-//    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+                .addResourceHandler("/resources/**").addResourceLocations("resources");
+    }
+
+    @Bean
+    public SpringResourceTemplateResolver templateResolver() {
+        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+        resolver.setPrefix("/WEB-INF/templates/");
+        resolver.setSuffix(".html");
+        return resolver;
+    }
+
+    @Bean
+    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver resolver) {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(resolver);
+        return templateEngine;
+    }
+
+    @Bean
+    public ViewResolver viewResolver(SpringTemplateEngine templateEngine) {
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(templateEngine);
+        viewResolver.setCharacterEncoding("UTF-8");
+        return viewResolver;
+    }
 }
