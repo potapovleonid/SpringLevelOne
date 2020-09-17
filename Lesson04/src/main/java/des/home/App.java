@@ -16,11 +16,17 @@ public class App {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppData.class);
 
-        ProductJpaDAORepository daoRepository = context.getBean(ProductJpaDAORepository.class);
+//        ProductJpaDAORepository daoRepository = context.getBean(ProductJpaDAORepository.class);
 
-        Product product = new Product("Butter", 15.25);
-        List<Product> products = Arrays.asList(product);
-        daoRepository.saveAll(products);
+        ProductServiceImpl productService = context.getBean(ProductServiceImpl.class);
+
+        Product product = new Product();
+        product.setPrice(15);
+        product.setTitle("butter");
+//        List<Product> products = Arrays.asList(product);
+        productService.save(product);
+
+        System.out.println(productService.findAll());
     }
 
 }

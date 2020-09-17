@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+//@Repository
 public interface ProductJpaDAORepository extends JpaRepository<Product, Long> {
     List<Product> findAllByTitleLike(String title);
     List<Product> findAllByIdBetween(Long startId, Long endId);

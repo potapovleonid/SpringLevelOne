@@ -17,15 +17,15 @@ public class Product {
     private String title;
 
     @Column(name = "price_fld")
-    private Double price;
+    private Integer price;
 
     public Product() {
     }
 
-    public Product(String title, Double price) {
-        this.title = title;
-        this.price = price;
-    }
+//    public Product(String title, Double price) {
+//        this.title = title;
+//        this.price = price;
+//    }
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Product {
         this.title = title;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

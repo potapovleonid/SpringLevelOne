@@ -10,13 +10,13 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+//import org.springframework.web.servlet.ViewResolver;
+//import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+//import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+//import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+//import org.thymeleaf.spring5.SpringTemplateEngine;
+//import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+//import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -35,7 +35,7 @@ public class AppData {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/magazine?serverTimezone=UTC");
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("355286888aaAA!!@@##$$%%");
 
@@ -51,11 +51,12 @@ public class AppData {
         factoryBean.setPackagesToScan("des.home.domain");
 
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         properties.put("hibernate.max_fetch_depth", 3);
         properties.put("hibernate.jdbc.fetch_size", 50);
         properties.put("hibernate.jdbc.batch_size", 10);
         properties.put("hibernate.show_sql", true);
+        properties.put("hibernate.hbm2ddl.auto", "create");
 
         factoryBean.setJpaProperties(properties);
 
