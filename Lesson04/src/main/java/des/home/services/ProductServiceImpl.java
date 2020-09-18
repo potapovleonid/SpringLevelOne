@@ -29,27 +29,27 @@ public class ProductServiceImpl{
                 .collect(Collectors.toList());
     }
 
-    @Transactional
+//    @Transactional
     public void save(Product product) {
         productJpaDAORepository.save(product);
     }
 
-    @Transactional
+//    @Transactional
     public void update(Product product) {
         productJpaDAORepository.saveAndFlush(product);
     }
 
-    @Transactional
+//    @Transactional
     public void remove(Product product) {
         productJpaDAORepository.delete(product);
     }
 
-    @Transactional
+//    @Transactional
     public Product findById(Long id){
         return productJpaDAORepository.findById(id).orElse(null);
     }
 
-    @Autowired
+//    @Autowired
     public List<Product> findAll(){
         return productJpaDAORepository.findAll();
     }

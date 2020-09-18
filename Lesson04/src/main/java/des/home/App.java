@@ -4,6 +4,7 @@ import des.home.domain.Product;
 import des.home.repositories.ProductJpaDAORepository;
 import des.home.services.ProductServiceImpl;
 import des.home.settings.AppData;
+import des.home.settings.MVCData;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -25,7 +26,7 @@ public class App {
         product.setTitle("butter");
 //        List<Product> products = Arrays.asList(product);
         productService.save(product);
-
+        
         System.out.println(productService.findAll());
     }
 

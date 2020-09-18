@@ -32,8 +32,8 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories("des.home.repositories")
-@EnableTransactionManagement
 @ComponentScan("des.home")
+@EnableTransactionManagement
 public class AppData{
     /* JPA */
     @Bean(name = "dataSource")
@@ -41,7 +41,7 @@ public class AppData{
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/magazine?serverTimezone=UTC");
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("355286888aaAA!!@@##$$%%");
 
@@ -62,7 +62,7 @@ public class AppData{
         properties.put("hibernate.jdbc.fetch_size", 50);
         properties.put("hibernate.jdbc.batch_size", 10);
         properties.put("hibernate.show_sql", true);
-        properties.put("hibernate.hbm2ddl.auto", "create");
+        properties.put("hibernate.hbm2ddl.auto", "update");
 
         factoryBean.setJpaProperties(properties);
 
