@@ -4,6 +4,7 @@ import des.home.domain.Product;
 import des.home.repositories.ProductJpaDAORepository;
 import des.home.services.ProductServiceImpl;
 import des.home.settings.AppData;
+import des.home.settings.MVCData;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
