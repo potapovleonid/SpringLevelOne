@@ -21,14 +21,13 @@ public class ProductController {
     }
 
     //products
-    @RequestMapping(method = RequestMethod.GET)
-    public String list(Model model){
-        List<Product> products = productService.getProducts();
-        model.addAttribute("products", products);
-        return "allProducts";
-    }
+//    @RequestMapping(method = RequestMethod.GET)
+//    public String list(Model model){
+//        List<Product> products = productService.getProducts();
+//        model.addAttribute("products", products);
+//        return "allProducts";
+//    }
 
-    //products/* НЕ РАБОТАЕТ! пишет просто product
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getById(Model model, @PathVariable("id") Long id){
         Product product = productService.getById(id);
