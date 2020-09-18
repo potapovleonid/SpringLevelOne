@@ -1,0 +1,8 @@
+des\home\settings\AppData.class
+des\home\domain\Product.class
+des\home\App.class
+des\home\settings\WebInitializer.class
+des\home\controllers\WebController.class
+des\home\controllers\ProductsController.class
+des\home\repositories\ProductJpaDAORepository.class
+des\home\services\ProductServiceImpl.class
