@@ -33,7 +33,6 @@ import java.util.Properties;
 @Configuration
 @EnableJpaRepositories("des.home.repositories")
 @EnableTransactionManagement
-@ComponentScan("des.home")
 public class AppData{
     /* JPA */
     @Bean(name = "dataSource")

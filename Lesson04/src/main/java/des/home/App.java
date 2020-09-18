@@ -25,7 +25,7 @@ public class App {
         product.setTitle("butter");
 //        List<Product> products = Arrays.asList(product);
         productService.save(product);
-
+        
         System.out.println(productService.findAll());
     }
 
