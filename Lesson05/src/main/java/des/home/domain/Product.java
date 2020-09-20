@@ -1,5 +1,9 @@
 package des.home.domain;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Product {
 
     private Long product_id;
@@ -13,6 +17,13 @@ public class Product {
         this.product_id = product_id;
         this.title_fld = title_fld;
         this.price_fld = price_fld;
+    }
+
+    public static List<Product> getByPrice(List<Product> products, Double start, Double end){
+        return products.stream()
+                .filter(product-> product.getPrice_fld() >= start && product.getPrice_fld() <= end)
+                .sorted(Comparator.comparingDouble(Product::getPrice_fld))
+                .collect(Collectors.toList());
     }
 
     public Long getProduct_id() {

@@ -16,7 +16,15 @@
         <td th:text="${product.price_fld}">koko@email</td>
     </tr>
 </table>
-
+<br>
+<form action="#">
+    Start Filter
+    <input type="number">
+    End Filter
+    <input type="number">
+    <button>Filter</button>
+</form>
+<br>
 <form action="#" th:action="@{/products}" th:object="${product}" method="post">
     <input type="text" th:field="*{title_fld}">
     <input type="number" th:field="*{price_fld}">
