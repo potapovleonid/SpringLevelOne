@@ -52,10 +52,10 @@ public class ProductController {
     // http://localhost:8080/app/filter?price_from=35.4&priceTo=3
     @GetMapping("/filter")
     public String filterByPrice(Model model,
-                                @RequestParam(name = "price_from") Double priceFrom,
+                                @RequestParam(name = "price_from") double priceFrom,
                                 @RequestParam(required = false) Double priceTo){
         List<Product> products =
-                Product.getByPrice(this.products ,priceFrom, priceTo == null ? Double.MAX_VALUE : priceTo);
+                Product.getByPrice(this.products, priceFrom, priceTo == null ? Double.MAX_VALUE : priceTo);
         model.addAttribute("products", products);
         return "filterList";
     }
