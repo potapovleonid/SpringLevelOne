@@ -51,23 +51,23 @@ public class ProductController {
     }
 
     @PostMapping("/productsFilter")
-    public void filter(@RequestParam(name = "startFilter") Double startFilter,
+    public String filter(@RequestParam(name = "startFilter") Double startFilter,
                          @RequestParam(name = "endFilter") Double endFilter){
-        System.out.println(startFilter.toString() + " " + endFilter.toString());
+//        System.out.println(startFilter.toString() + " " + endFilter.toString());
         String filter = "";
-//        if ((endFilter == null && startFilter == null) || startFilter == null){
-//            return "redirect:/products";
-//        }
-//        if (endFilter == null){
-//            filter = "redirect:/filter?price_form=" + startFilter + "&priceTo=" + Double.MAX_VALUE;
-//            return filter;
-//        } else {
-//            filter = "redirect:/filter?price_form=" + startFilter + "&priceTo=" + endFilter;
-//            return filter;
-//        }
+        if ((endFilter == null && startFilter == null) || startFilter == null){
+            return "redirect:/products";
+        }
+        if (endFilter == null){
+            filter = "redirect:/filter?price_from=" + startFilter + "&priceTo=" + Double.MAX_VALUE;
+            return filter;
+        } else {
+            filter = "redirect:/filter?price_from=" + startFilter + "&priceTo=" + endFilter;
+            return filter;
+        }
     }
 
-    // http://localhost:8080/app/filter?price_from=35.4&priceTo=3
+//     http://localhost:8080/app/filter?price_from=35.4&priceTo=3
     @GetMapping("/filter")
     public String filterByPrice(Model model,
                                 @RequestParam(name = "price_from") double priceFrom,

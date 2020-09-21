@@ -19,6 +19,7 @@
     </tr>
 </table>
 <br>
+<h2>Filter products</h2>
 <form action="#" th:action="@{/productsFilter}" method="post">
     Start Filter
     <input type="number" step="any" name="startFilter">
@@ -27,9 +28,10 @@
     <button type="submit">Filter</button>
 </form>
 <br>
+<h2>Add product</h2>
 <form action="#" th:action="@{/products}" th:object="${product}" method="post">
-    <input type="text" th:field="*{title_fld}">
-    <input type="number" step="any" th:field="*{price_fld}">
+    Title <input type="text" th:field="*{title_fld}">
+    Price <input type="number" step="any" th:field="*{price_fld}">
     <button type="submit">Save</button>
 </form>
 </body>
