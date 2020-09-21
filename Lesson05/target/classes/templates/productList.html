@@ -8,28 +8,26 @@
 <div th:insert="~{menu :: #nav-menu}"></div>
 <table border="1">
     <tr>
-        <td>ID</td>
         <td>Title</td>
         <td>Price</td>
     </tr>
     <tr th:each="product : ${products}">
-        <td th:text="${product.product_id}">ID</td>>
         <td th:text="${product.title_fld}">Koko</td>
-        <td th:text="${product.price_fld}">228.28</td>
+        <td th:text="${product.price_fld}">koko@email</td>
     </tr>
 </table>
 <br>
-<form action="#" th:action="@{/productsFilter}" method="post">
+<form action="#">
     Start Filter
-    <input type="number" step="any" name="startFilter">
+    <input type="number">
     End Filter
-    <input type="number" step="any" name="endFilter">
-    <button type="submit">Filter</button>
+    <input type="number">
+    <button>Filter</button>
 </form>
 <br>
 <form action="#" th:action="@{/products}" th:object="${product}" method="post">
     <input type="text" th:field="*{title_fld}">
-    <input type="number" step="any" th:field="*{price_fld}">
+    <input type="number" th:field="*{price_fld}">
     <button type="submit">Save</button>
 </form>
 </body>

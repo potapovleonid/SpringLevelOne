@@ -46,13 +46,25 @@ public class ProductController {
     @PostMapping("/products")
     public String addProduct(Product productForm){
         System.out.println("Request contains user -> " + productForm.toString());
+        products.add(new Product((long) (products.size() + 1), productForm.getTitle_fld(), productForm.getPrice_fld()));
         return "redirect:/products";
     }
 
-    @PostMapping("/products")
-    public String filter(Product productForm){
+    @PostMapping("/productsFilter")
+    public void filter(@RequestParam(name = "startFilter") Double startFilter,
+                         @RequestParam(name = "endFilter") Double endFilter){
+        System.out.println(startFilter.toString() + " " + endFilter.toString());
         String filter = "";
-        return "redirect:/" + filter;
+//        if ((endFilter == null && startFilter == null) || startFilter == null){
+//            return "redirect:/products";
+//        }
+//        if (endFilter == null){
+//            filter = "redirect:/filter?price_form=" + startFilter + "&priceTo=" + Double.MAX_VALUE;
+//            return filter;
+//        } else {
+//            filter = "redirect:/filter?price_form=" + startFilter + "&priceTo=" + endFilter;
+//            return filter;
+//        }
     }
 
     // http://localhost:8080/app/filter?price_from=35.4&priceTo=3
