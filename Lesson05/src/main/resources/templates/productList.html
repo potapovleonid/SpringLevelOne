@@ -8,12 +8,14 @@
 <div th:insert="~{menu :: #nav-menu}"></div>
 <table border="1">
     <tr>
+        <td>ID</td>
         <td>Title</td>
         <td>Price</td>
     </tr>
     <tr th:each="product : ${products}">
+        <td th:text="${product.product_id}">ID</td>>
         <td th:text="${product.title_fld}">Koko</td>
-        <td th:text="${product.price_fld}">koko@email</td>
+        <td th:text="${product.price_fld}">228.28</td>
     </tr>
 </table>
 <br>

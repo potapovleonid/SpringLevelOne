@@ -44,9 +44,15 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public String addUser(Product productForm){
+    public String addProduct(Product productForm){
         System.out.println("Request contains user -> " + productForm.toString());
         return "redirect:/products";
+    }
+
+    @PostMapping("/products")
+    public String filter(Product productForm){
+        String filter = "";
+        return "redirect:/" + filter;
     }
 
     // http://localhost:8080/app/filter?price_from=35.4&priceTo=3
