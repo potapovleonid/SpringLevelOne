@@ -9,14 +9,7 @@
 <div th:insert="~{menu :: #nav-menu}"></div>
 
 <br>
-<h2>Filter products</h2>
-<form action="#" th:action="@{/productsFilter}" method="post">
-    Start Filter
-    <input type="number" step="any" name="startFilter">
-    End Filter
-    <input type="number" step="any" name="endFilter">
-    <button type="submit">Filter</button>
-</form>
+<div th:replace="filters :: filter-inputs"></div>
 <br>
 <h1>Filter products</h1>
 <p th:each="product : ${products}" th:text="${product.title_fld}" th:number="${product.price_fld}"/>

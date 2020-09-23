@@ -1,11 +1,17 @@
 package com.example.Lesson06.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue
     private Long product_id;
     private String title_fld;
     private Float price_fld;
