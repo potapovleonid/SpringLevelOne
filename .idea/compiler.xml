@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Lesson04" />
+        <module name="Lesson05" />
         <module name="Lesson02" />
         <module name="Lesson03" />
       </profile>
@@ -15,6 +16,12 @@
       <module name="Lesson02" target="1.8" />
       <module name="Lesson03" target="1.8" />
       <module name="Lesson04" target="1.8" />
+      <module name="Lesson05" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Lesson05" options="-parameters" />
+    </option>
   </component>
 </project>
