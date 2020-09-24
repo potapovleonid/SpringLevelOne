@@ -11,5 +11,5 @@ public interface ProductService {
 
     Product save(Product product);
 
-    List<Product> getByPrice(Float startFilter, Float endFilter);
+    List<Product> getByPrice(Double startFilter, Double endFilter);
 }

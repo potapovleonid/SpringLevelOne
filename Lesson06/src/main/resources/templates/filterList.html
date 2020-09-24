@@ -12,7 +12,18 @@
 <div th:replace="filters :: filter-inputs"></div>
 <br>
 <h1>Filter products</h1>
-<p th:each="product : ${products}" th:text="${product.title_fld}" th:number="${product.price_fld}"/>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Price</td>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.product_id}"></td>>
+        <td th:text="${product.title_fld}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+</table>
 
 </body>
 </html>

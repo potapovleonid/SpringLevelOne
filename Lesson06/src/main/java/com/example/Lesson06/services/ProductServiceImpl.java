@@ -2,18 +2,27 @@ package com.example.Lesson06.services;
 
 import com.example.Lesson06.domain.Product;
 import com.example.Lesson06.repository.ProductDAO;
+import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     private final ProductDAO productDAO;
 
     public ProductServiceImpl(ProductDAO productDAO) {
         this.productDAO = productDAO;
+        initializDB();
     }
 
-    private void initializDB(){
-        // Создание какие то продуктов
+    private void initializDB() {
+        productDAO.saveAll(Arrays.asList(
+                new Product(null, "Bread", 15.25),
+                new Product(null, "Butter", 16.35),
+                new Product(null, "Apple", 5.05),
+                new Product(null, "Orange", 10.50)
+        ));
     }
 
     @Override
@@ -32,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getByPrice(Float startFilter, Float endFilter) {
-        return productDAO.findAllByPrice_fldBetween(startFilter, endFilter);
+    public List<Product> getByPrice(Double startFilter, Double endFilter) {
+        return productDAO.findAllByPriceBetween(startFilter, endFilter);
     }
 }
