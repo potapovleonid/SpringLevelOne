@@ -3,11 +3,13 @@ package com.example.Lesson06.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
+@Table(name = "products_tbl")
 public class Product {
 
     @Id
