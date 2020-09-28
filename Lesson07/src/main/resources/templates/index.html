@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+<!--    <title th:text="${title}">Some Title</title>-->
+</head>
+<body>
+<div th:insert="~{menu :: #nav-menu}"></div>
+
+<h2>Hello, next will be dynamic value</h2>
+<h2 th:text="${message}">text of message</h2>
+<!--<input type="text" name="product" value="SimpleUser" th:value="${product.title_fld}"/><br>-->
+
+<h2>I18N Messages dfgsdfgsdfg</h2>
+<h3 th:text="#{welcome.message}"></h3>
+
+<h2>Size of user list</h2>
+<h3 th:text="${products.size()}"></h3> <a th:href="@{/products}">Products!!!</a>
+
+
+</body>
+</html>
