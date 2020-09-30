@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /app
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/magazine?serverTimezone=UTC
+    username: root
+    password: 355286888aaAA!!@@##$$%%
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans, mappings
