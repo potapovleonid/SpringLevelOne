@@ -19,10 +19,10 @@ public class ProductServiceImpl implements ProductService {
 
     private void initializDB() {
         productDAO.saveAll(Arrays.asList(
-                new Product(null, "Bread", 15.25),
-                new Product(null, "Butter", 16.35),
-                new Product(null, "Apple", 5.05),
-                new Product(null, "Orange", 10.50)
+                new Product(null, 15.25, "Bread"),
+                new Product(null, 16.35, "Butter"),
+                new Product(null, 5.05, "Apple"),
+                new Product(null, 10.50, "Orange")
         ));
     }
 
@@ -45,4 +45,5 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getByPrice(Double startFilter, Double endFilter) {
         return productDAO.findAllByPriceBetween(startFilter, endFilter);
     }
+
 }

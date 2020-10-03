@@ -1,29 +1,42 @@
 package home.des.domain;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "users_tbl")
-public class User {
+@SequenceGenerator(name = "user_seq", initialValue = 1, allocationSize = 50)
+public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "firstname_fld")
-    private String firstname;
+    @Column(name = "name_fld")
+    private String name;
 
-    @Column(name = "lastname_fld")
-    private String lastname;
+    @Column(name = "password_fld")
+    private String password;
+
+    @Column(name = "role_fld")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User() {
     }
 
-    public User(Long id, String firstname, String lastname) {
+    public User(Long id, String name, String password, Role role) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.name = name;
+        this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
@@ -34,28 +47,59 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getPassword() {
+        return password;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                '}';
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority(role.name()));
+        return authorities;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

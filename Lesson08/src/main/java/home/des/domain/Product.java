@@ -7,12 +7,13 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "products_tbl")
+@SequenceGenerator(name = "product_seq", initialValue = 1, allocationSize = 50)
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator = "product_seq")
     @Column(name = "product_id")
-    private Long product;
+    private Long id;
     @Column(name = "price_fld")
     private Double price;
     @Column(name = "title_fld")
@@ -21,8 +22,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long product,String title , Double price) {
-        this.product = product;
+    public Product(Long id, Double price, String title) {
+        this.id = id;
         this.price = price;
         this.title = title;
     }
@@ -34,13 +35,12 @@ public class Product {
                 .collect(Collectors.toList());
     }
 
-
-    public Long getProduct() {
-        return product;
+    public Long getId() {
+        return id;
     }
 
-    public void setProduct(Long product) {
-        this.product = product;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Double getPrice() {

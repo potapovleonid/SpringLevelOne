@@ -11,23 +11,17 @@
         <td>ID</td>
         <td>Title</td>
         <td>Price</td>
+        <td>Redaction</td>
     </tr>
     <tr th:each="product : ${products}">
-        <td th:text="${product.product}">ID</td>>
+        <td th:text="${product.id}">ID</td>>
         <td th:text="${product.title}">Koko</td>
         <td th:text="${product.price}">228.28</td>
+        <td><a th:href="@{/products/{id}(id=${product.id})}">Edit</a></td>
     </tr>
 </table>
 <br>
-
 <div th:replace="filters :: filter-inputs"></div>
 
-<br>
-<h2>Add product</h2>
-<form action="#" th:action="@{/products}" th:object="${product}" method="post">
-    Title <input type="text" th:field="*{title}">
-    Price <input type="number" step="any" th:field="*{price}">
-    <button type="submit">Save</button>
-</form>
 </body>
 </html>

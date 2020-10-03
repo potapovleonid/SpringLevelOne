@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ProductDAO extends JpaRepository<Product, Long> {
     List<Product> findAllByPriceBetween(Double startFilter, Double endFilter);
+    Product deleteProductById(Long id);
 }

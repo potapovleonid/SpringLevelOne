@@ -1,30 +1,45 @@
 package home.des.controllers;
 
+import home.des.domain.Role;
 import home.des.domain.User;
-import home.des.repository.UserDAO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import home.des.services.UserService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/users")
 public class UserController {
-    private final UserDAO userDAO;
 
-    public UserController(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping
-    public List<User> getAll(){
-        return userDAO.findAll();
+    public String usersList(Model model) {
+        model.addAttribute("users", userService.getAll());
+        return "userList";
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id){
-        return userDAO.findById(id).orElse(null);
+    public String getById(Model model, @PathVariable Long id) {
+        User user = userService.getById(id);
+        model.addAttribute("user", user == null ? new User() : user);
+        return "user";
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.delete(id);
+    }
+
+    @PostMapping("/updateUser")
+    public String updateUser(User userForm) {
+        userService.save(userForm);
+        return "redirect:/users";
     }
 }
