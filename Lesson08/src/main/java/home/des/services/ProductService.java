@@ -11,4 +11,6 @@ public interface ProductService {
     Product save(Product product);
 
     List<Product> getByPrice(Double startFilter, Double endFilter);
+
+    void delete(Long id);
 }

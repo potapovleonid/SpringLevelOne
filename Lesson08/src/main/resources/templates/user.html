@@ -30,9 +30,11 @@
 
     </table>
     <button type="submit">Save</button>
+
 </form>
-<form th:action="@{/*{id}}" method="delete">
+<form th:action="@{/deleteUser/{id}(id=${user.id})}" th:object="${user}" method="post">
     <button type="submit">Delete</button>
 </form>
+
 </body>
 </html>

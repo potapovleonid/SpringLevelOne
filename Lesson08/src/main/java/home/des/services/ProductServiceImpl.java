@@ -46,4 +46,8 @@ public class ProductServiceImpl implements ProductService {
         return productDAO.findAllByPriceBetween(startFilter, endFilter);
     }
 
+    @Override
+    public void delete(Long id) {
+        productDAO.deleteProductById(id);
+    }
 }

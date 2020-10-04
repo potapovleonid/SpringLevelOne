@@ -33,10 +33,11 @@ public class ProductController {
         return "redirect:/products";
     }
 
-    @PostMapping("/product")
+    @PostMapping("/updateProduct")
     public String updateProduct(Product productForm){
         if (productForm.getPrice() != null && productForm.getTitle() != null) {
             System.out.println("Update contains product" + productForm.toString());
+//            productService.delete(productForm.getId());
             productService.save(productForm);
         } else System.out.println("Update contains product failed \nGetPrice: " + productForm.getPrice() +
                 "\nGetTitle: " + productForm.getTitle());
@@ -49,5 +50,7 @@ public class ProductController {
         model.addAttribute("product", product == null ? new Product() : product);
         return "product";
     }
+
+//    @PostMapping("/delete")
 
 }

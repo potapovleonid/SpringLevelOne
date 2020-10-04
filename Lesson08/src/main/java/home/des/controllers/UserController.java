@@ -2,6 +2,7 @@ package home.des.controllers;
 
 import home.des.domain.Role;
 import home.des.domain.User;
+import home.des.repository.UserDAO;
 import home.des.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,7 @@ public class UserController {
         return "user";
     }
 
-    @DeleteMapping("/{id}")
+    @PostMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.delete(id);
     }
