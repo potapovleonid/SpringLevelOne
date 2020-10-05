@@ -6,6 +6,7 @@ import home.des.repository.UserDAO;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -63,11 +64,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         userDAO.deleteUserById(id);
     }
 
     @Override
+    @Transactional
     public User save(User user) {
         return userDAO.save(user);
     }

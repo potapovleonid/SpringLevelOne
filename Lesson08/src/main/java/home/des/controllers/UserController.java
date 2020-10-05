@@ -33,13 +33,13 @@ public class UserController {
         return "user";
     }
 
-    @PostMapping("/deleteUser/{id}")
+    @PostMapping("/{id}/delete")
     public void deleteUser(@PathVariable Long id) {
         userService.delete(id);
     }
 
-    @PostMapping("/updateUser")
-    public String updateUser(User userForm) {
+    @PostMapping("/{id}")
+    public String updateUser(User userForm, @PathVariable Long id) {
         userService.save(userForm);
         return "redirect:/users";
     }

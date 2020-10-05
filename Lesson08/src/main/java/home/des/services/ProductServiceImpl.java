@@ -4,6 +4,7 @@ package home.des.services;
 import home.des.domain.Product;
 import home.des.repository.ProductDAO;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public Product save(Product product) {
         return productDAO.save(product);
     }
@@ -47,6 +49,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         productDAO.deleteProductById(id);
     }

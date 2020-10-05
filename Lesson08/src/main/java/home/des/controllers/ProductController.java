@@ -33,8 +33,8 @@ public class ProductController {
         return "redirect:/products";
     }
 
-    @PostMapping("/updateProduct")
-    public String updateProduct(Product productForm){
+    @PostMapping("/{id}")
+    public String updateProduct(Product productForm, @PathVariable Long id){
         if (productForm.getPrice() != null && productForm.getTitle() != null) {
             System.out.println("Update contains product" + productForm.toString());
 //            productService.delete(productForm.getId());
@@ -51,6 +51,10 @@ public class ProductController {
         return "product";
     }
 
-//    @PostMapping("/delete")
+    @GetMapping("/{id}/delete")
+    public String deleteProduct(@PathVariable Long id){
+        productService.delete(id);
+        return "redirect:/products";
+    }
 
 }
