@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<div th:insert="~{menu :: #nav-menu}"></div>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Price</td>
+        <td>Redaction</td>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}">ID</td>>
+        <td th:text="${product.title}">Koko</td>
+        <td th:text="${product.price}">228.28</td>
+        <td><a th:href="@{/products/{id}(id=${product.id})}">Edit</a></td>
+    </tr>
+</table>
+<br>
+<div th:replace="filters :: filter-inputs"></div>
+
+</body>
+</html>

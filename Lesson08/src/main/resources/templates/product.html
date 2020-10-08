@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<h1>User form</h1>
+<form th:action="@{/products/{id}(id=${product.id})}" th:object="${product}" method="post">
+    <table border="1">
+
+        <tr>
+            <td>Id</td>
+            <td><input type="text" disabled th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" th:field="*{title}"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="number" step="0.01" th:field="*{price}"></td>
+        </tr>
+
+    </table>
+    <button type="submit">Save</button>
+</form>
+<form th:action="@{/products/{id}/delete(id=${product.id})}" th:object="${product}" method="get">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

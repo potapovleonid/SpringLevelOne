@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+<h1>User form</h1>
+<form th:action="@{/users/{id}(id=${user.id}})}" th:object="${user}" method="post">
+    <h2>Specify roles: MANAGER, ADMIN, SUPER_ADMIN</h2>
+    <table border="1">
+
+        <tr>
+            <td>Id</td>
+            <td><input type="text" disabled th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" th:field="*{password}"></td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td><input type="text" th:field="*{role}"></td>
+        </tr>
+
+    </table>
+    <button type="submit">Save</button>
+
+</form>
+<form th:action="@{/users/{id}/delete(id=${user.id})}" th:object="${user}" method="post">
+    <button type="submit">Delete</button>
+</form>
+
+</body>
+</html>
