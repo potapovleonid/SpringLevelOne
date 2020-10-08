@@ -30,9 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/products", "/products/**").hasAnyAuthority(Role.ADMIN.name(), Role.MANAGER.name(), Role.SUPER_ADMIN.name())
+                .antMatchers("/products", "/products/*").hasAnyAuthority(Role.ADMIN.name(), Role.MANAGER.name(), Role.SUPER_ADMIN.name())
+                .antMatchers("/products/*/*").hasAnyAuthority(Role.SUPER_ADMIN.name())
                 .antMatchers("/users").hasAnyAuthority(Role.ADMIN.name(), Role.SUPER_ADMIN.name())
-                .antMatchers("users/**").hasAuthority(Role.SUPER_ADMIN.name())
+                .antMatchers("/users/*").hasAuthority(Role.SUPER_ADMIN.name())
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

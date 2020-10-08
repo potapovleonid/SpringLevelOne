@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "products_tbl")
-@SequenceGenerator(name = "product_seq", initialValue = 1, allocationSize = 50)
+@SequenceGenerator(name = "product_seq", initialValue = 1)
 public class Product {
 
     @Id
